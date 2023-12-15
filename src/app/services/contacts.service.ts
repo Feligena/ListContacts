@@ -38,7 +38,13 @@ export class ContactsService {
   }
 
   removePerson(id: number){
-    this.persons = this.persons.filter(x => x.id != id)
+    this.persons = this.persons.filter(x => x.id != id);
+    // let tmp = this.persons.find(x => x.id == id);
+    // if(tmp){
+    //   tmp.isDeleted = true;
+    //   this.persons = this.persons.filter(x => x.isDeleted != true);
+    // }
+    
   }
 
   searchPersonByName(str: string){

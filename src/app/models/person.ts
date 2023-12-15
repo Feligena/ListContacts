@@ -5,6 +5,7 @@ export class Person {
     phone: string = '';
     email: string = '';
     image?: string = '';
+    isDeleted?: boolean = false;
 
     constructor(){
     }

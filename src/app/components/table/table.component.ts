@@ -5,7 +5,6 @@ import { NgFor } from '@angular/common';
 import { SearchPipe } from '../../pipes/search.pipe';
 import { Person } from '../../models/person';
 import { RouterLink } from '@angular/router';
-import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-table',
@@ -20,11 +19,6 @@ export class TableComponent implements OnInit {
   
   constructor(public contactsService: ContactsService,
               public http:HttpClient){}
-
-  // onUpdatePersonData(id:number){
-  //   this.contactsService.updatePerson(id);
-  //   this.contactsService.save();
-  // }
 
 onRemovePersonData(id: number): void{
   this.contactsService.removePerson(id);
@@ -41,7 +35,7 @@ async ngOnInit(): Promise<void> {
     this.contactsService.persons = await this.http.get('assets/people.json').toPromise() as unknown as Array<Person>;
  }catch(error){}
 
-  this.contactsService.load();
+   this.contactsService.load();
 }
 
 }
