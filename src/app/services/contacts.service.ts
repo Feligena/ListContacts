@@ -10,6 +10,9 @@ export class ContactsService {
     searchText: string = '';
   constructor() { }
 
+  getContact(id: number): Person | undefined{
+    return this.persons.find(x => x.id == id);
+  }
 
   addPerson(person: Person){
     
@@ -23,13 +26,14 @@ export class ContactsService {
     this.persons.push(tmpPerson);
   }
 
-  updatePerson(id: number, firstName?: string, lastName?: string, phone?: string, email?: string){
-    let tmp = this.persons.find(x => x.id == id);
+  // updatePerson(id: number, firstName?: string, lastName?: string, phone?: string, email?: string){
+  updatePerson(person: Person){   
+    let tmp = this.persons.find(x => x.id == person.id);
     if(tmp){
-      if(firstName) tmp.firstName = firstName;
-      if(lastName) tmp.lastName = lastName;
-      if(phone) tmp.phone = phone;
-      if(email) tmp.email = email;
+      if(person.firstName) tmp.firstName = person.firstName;
+      if(person.lastName) tmp.lastName = person.lastName;
+      if(person.phone) tmp.phone = person.phone;
+      if(person.email) tmp.email = person.email;
     }
   }
 

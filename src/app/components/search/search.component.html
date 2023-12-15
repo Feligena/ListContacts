@@ -1,7 +1,4 @@
-<form (submit)="onSearchByName()" class="form-control text-center row">
-    <h4>Search form by name</h4>
-    <div class="d-inline-flex">
-        <input type="text" name="searchText" placeholder="Name..." [(ngModel)]="searchText" class="form-control">
-        <input type="submit" value="Search" class="btn btn-primary">
-    </div>
+<form (submit)="onSearchByName()" class="form-control text-center d-inline-flex">
+    <input type="text" name="searchText" placeholder="Name..." [(ngModel)]="searchText" class="form-control">
+    <input type="submit" value="Search" class="btn btn-primary">
 </form>

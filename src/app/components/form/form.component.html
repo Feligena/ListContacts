@@ -1,20 +1,19 @@
-<form (submit)="onAddPerson()" class="form-control row">
-    <h4 class="text-center">Add phone form</h4>
+<form (submit)="onAddPerson()"  class="form-control ">
     <div class="mb-3">
         <label class="form-label">Name</label>
-        <input type="text" name="firstName" [(ngModel)]="item.firstName" class="form-control" placeholder="Name">
+        <input type="text" name="firstName" [(ngModel)]="item.firstName" value="{{item.firstName}}" class="form-control" placeholder="Name">
     </div>
     <div class="mb-3">
         <label class="form-label">Surename</label>
-        <input type="text" name="surename" [(ngModel)]="item.lastName" class="form-control" placeholder="Surename">
+        <input type="text" name="surename" [(ngModel)]="item.lastName" [value]="item.lastName" class="form-control" placeholder="Surename">
     </div>
     <div class="mb-3">
         <label class="form-label">Phone</label>
-        <input type="text" name="phone" [(ngModel)]="item.phone" class="form-control" placeholder="Phone">
+        <input type="text" name="phone" [(ngModel)]="item.phone" [attr.value]="item.phone" class="form-control" placeholder="Phone">
     </div>
     <div class="mb-3">
         <label class="form-label">Email</label>
-        <input type="text" name="phone" [(ngModel)]="item.email" class="form-control" placeholder="Phone">
+        <input type="text" name="email" [(ngModel)]="item.email" class="form-control" placeholder="Email">
     </div>
     <input type="submit" class="btn btn-primary" value="Save"/>
 </form>
